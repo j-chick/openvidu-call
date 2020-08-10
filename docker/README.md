@@ -7,9 +7,9 @@ OpenVidu bases its deployment on Docker **since 2.13.0 version**.
 
 ### Build OpenVidu Call container
 
-You have several options to build it:
+<!-- You have several options to build it: -->
 
-####  stable.dockerfile
+<!-- ####  stable.dockerfile
 
 The aim of this docker file is generate a docker image from a OpenVidu Call release.
 
@@ -19,7 +19,7 @@ To build it:
 
 ```bash
 docker build -f stable.dockerfile -t <your-tag-name> --build-arg RELEASE_VERSION=<your-release-version> .
-```
+``` -->
 
 ####  prod.dockerfile
 
@@ -28,20 +28,25 @@ The aim of this docker file is generate a docker image from a OpenVidu Call bran
 To build it:
 
 ```bash
-docker build -f prod.dockerfile -t <your-tag-name> --build-arg BRANCH_NAME=<branch-name> --build-arg BASE_HREF=<your-base-href>.
+docker build \
+    -f prod.dockerfile \
+    -t watutor/openvidu-call:<TAG> \
+    .
+    # --build-arg BRANCH_NAME=<branch-name> \
+    # --build-arg BASE_HREF=<your-base-href> \
 ```
 
 By default, the **BRANCH_NAME** name will be `master` and **BASE_HREF** will be `/`.
 
 
-####  dev.dockerfile
+<!-- ####  dev.dockerfile
 
 The aim of this docker file is generate a docker image from a OpenVidu Call branch intalling the `openvidu-browser` with the latest changes from **master** branch.
 
 
 ```bash
 docker build -f dev.dockerfile -t <your-tag-name> --build-arg BRANCH_NAME=<branch-name> --build-arg BASE_HREF=<your-base-href>.
-```
+``` -->
 ### Run OpenVidu Call container
 
 
